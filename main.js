@@ -1,10 +1,11 @@
 const { wrap, configure } = require('agentql')
 const { chromium } = require('playwright')
+require('dotenv').config()
 
 const queryMap = async () => {
     // Configure the AgentQL API key
     configure({
-        apiKey: '',
+        apiKey: process.env.AGENTQL_API_KEY,
     })
 
     // Launch a headless browser using Playwright.
